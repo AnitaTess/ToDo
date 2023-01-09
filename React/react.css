@@ -1,0 +1,116 @@
+body {
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+	color: royalblue;
+    background-color: lightgrey;
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0 auto;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 300;
+    text-align: center;
+}
+
+.todoapp {
+	background: #fff;
+	margin: 130px 0 40px 0;
+	position: relative;
+    padding: 10px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.root button{
+    font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: white;
+	font-weight: 700;
+	background-color: royalblue;
+	box-shadow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out; 
+}
+
+.root input{
+    
+	width: auto;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: royalblue;
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+	margin-bottom: 1.5rem;
+}
+
+.root .buttons{
+    color: royalblue;
+    background-color: #FFF;
+   font-size: 15px;
+   border: none;
+   margin-left: 10px;
+    padding: 6px;
+}
+
+.root .buttonss{
+    color: royalblue;
+    background-color: #FFF;
+   font-size: 15px;
+   border: none;
+    padding: 6px;
+    margin-left: 5px;
+}
+
+.root ul{
+    text-align: left;
+    background-color: white;
+    padding: 10px;
+    
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+.root li{
+    font-size: 20px;
+}
+
+.root input[type="checkbox"]{
+    -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+  margin-right: 12px;
+}
+
+.info {
+	margin: 65px auto 0;
+	color: royalblue;
+	font-size: 10px;
+	text-align: center;
+}
+
+.info p {
+	line-height: 1;
+	margin-bottom: 6px;
+}
+
+.info a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+.info a:hover {
+	text-decoration: underline;
+}

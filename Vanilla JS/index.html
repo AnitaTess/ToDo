@@ -1,0 +1,48 @@
+<!-- Vanilla JS ToDo app created by Anita Aksentowicz based on Tyler Potts's tutorial: -->
+<!-- https://www.youtube.com/watch?v=6eFwtaZf6zc -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vanilla JS ToDo App</title>
+	<!-- CSS Import -->
+	<link rel="stylesheet" href="main.css" />
+	<!-- End of CSS Import -->
+</head>
+<body>
+	<section class="todoapp">
+	<main class="app">
+		<!-- Logo -->
+		<div class="logo">
+		<img src="VanillaJS.png" alt="Vanilla JavaScript LOGO" height="100">
+		</div>
+		<!-- New Task -->
+		<section class="create-todo">
+			<h3>ADD NEW TASK</h3>
+			<form id="new-task">
+				<input 
+					type="text" 
+					placeholder="Today I have to..."
+					name="content"
+					id="content"
+					required />
+				<input type="submit" value="Add Task" />
+			</form>
+		</section>
+		<!-- Tasks List -->
+		<section class="todo-list">
+			<h3>YOUR TODO LIST:</h3>
+			<div class="list" id="tasks-list"></div>
+		</section>
+	</main>
+	<!-- JS Import -->
+	<script src="main.js"></script>
+</section>
+<!-- Footer -->
+<footer class="info">
+	<p>Created by Anita Aksentowicz</p>
+	<p>Based on <a href="https://www.youtube.com/watch?v=6eFwtaZf6zc">Tyler Potts's tutorial</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- ToDo App created by Anita Aksentowicz based on Erik Hanchett's tutorial:-->
+<!-- https://www.youtube.com/watch?v=pF590TdMKO4&t=285s -->
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<title>Vue ToDo App</title>
+		<link rel="stylesheet" href="assets/index.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<!-- Logo -->
+				<div class="logo">
+					<img src="assets/Vue.png" alt="Vue LOGO" height="100">
+					</div>
+					<!-- New Task -->
+				<input class="new-todo"
+				  v-model="newTodo"
+					v-on:keyup.enter="addTodo"
+				placeholder="Add New Task" autofocus>
+			</header>
+			<section class="main">
+				<!-- Tasks List -->
+				<h3 class="theTitle">Your ToDo List:</h3>
+				<ul class="todo-list">
+					<li v-for="todo in todos"
+						:class="{ completed: todo.completed, editing: todo == editedTodo}">
+						<div class="view">
+								<input class="toggle" type="checkbox" v-model="todo.completed" @click="doneTodo(todo)" />
+								<label @dblclick="editTodo(todo)">{{ todo.title }}</label>
+								<button class="destroy" @click="removeTodo(todo)"></button>
+						</div>
+						<input class="edit" type="text"
+							v-model="todo.title"
+							@blur="doneEdit(todo)"
+							@keyup.enter="doneEdit(todo)" />
+					</li>
+				</ul>
+			</section>
+			<!-- End Space -->
+			<footer class="footer">
+			</footer>
+		</section>
+		<!-- Footer -->
+		<footer class="info">
+			<p>Created by Anita Aksentowicz</p>
+			<p>Based on <a href="https://www.youtube.com/watch?v=pF590TdMKO4&t=285s">Erik Hanchett's tutorial</a></p>
+		</footer>
+
+		<script rel="script" src="main.js"></script>
+	</body>
+</html>

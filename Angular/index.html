@@ -1,0 +1,53 @@
+<!-- ToDo App created by Anita Aksentowicz based on Mohammad Farhan's tutorial:-->
+<!-- https://www.youtube.com/watch?v=pXg6C3d8IJ0&t=54s -->
+<!DOCTYPE html>
+<html ng-app="toDoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js">  </script>
+        <!-- CSS --> 
+        <link rel="stylesheet" href="style.css" />   
+    <title>Angular ToDo App</title>
+</head>
+<body ng-controller="toDoController">
+    <section class="todoapp">
+        <!-- Logo -->
+      <div class="logo">
+          <img src="angular.png" alt="React LOGO" height="100">
+          </div>
+      <!-- New task-->
+      <div id="root" class="root">
+  <form ng-submit="addToDo()">
+    <input type="text" placeholder="New Task" ng-model="newToDo.task">
+    <button type="submit">Add</button>
+  </form>
+  <!-- tasks list -->
+  <h2>Your To Do List:</h2>
+  <ul>
+    <li ng-repeat="item in toDoList">
+        <input type="checkbox" ng-model="item.done" ng-click="markAsDone(item)">
+      <span ng-class="{'done': item.done}" ng-if="item !== editedToDo">{{item.task}}</span>
+      <form ng-if="item === editedToDo" ng-submit="saveEdit()">
+        <input type="text" ng-model="editedToDo.task">
+        <button type="submit">Save</button>
+    </form>
+    <!-- edit and delete buttons -->
+      <button ng-click="editToDo(item)">Edit</button>
+      <button ng-click="removeToDo(item)">Remove</button>
+    </li>
+  </ul>
+</div>
+</section>
+<!-- Footer -->
+<footer class="info">
+    <p>Created by Anita Aksentowicz</p>
+    <p>Based on <a href="https://www.youtube.com/watch?v=pXg6C3d8IJ0&t=54s">Mohammad Farhan's tutorial</a></p>
+</footer>
+<!-- JS -->
+<script src="script.js"></script>  
+</body>
+</html>

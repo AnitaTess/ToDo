@@ -79,11 +79,17 @@ input[type="checkbox"] {
 	color: #e6e6e6;
 }
 
+.add{
+align-items: center;
+align-self: center;
+text-align: center;
+}
+
 .new-todo,
 .edit {
 	position: relative;
 	margin: 0;
-	width: 100%;
+	width: auto;
 	font-size: 24px;
 	font-family: inherit;
 	font-weight: inherit;
@@ -193,7 +199,21 @@ label[for='toggle-all'] {
 	text-decoration: line-through;
 }
 
-.todo-list li .destroy {
+.adding{
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: white;
+	font-weight: 700;
+	background-color: green;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.adding:hover {
+	background-color: lightgreen;
+}
+
+.todo-list li .destroy, .change  {
 	display: none;
 	position: absolute;
 	top: 0;
@@ -212,16 +232,33 @@ label[for='toggle-all'] {
 	color: green;
 }
 
+.todo-list li .change:hover {
+	color: green;
+}
+
 .todo-list li .destroy:after {
-	content: 	'\d7';
+	content: 	'\2716';
+}
+
+.todo-list li .change:after {
+	content: 	'\270E';
 }
 
 .todo-list li:hover .destroy {
 	display: block;
 }
 
+.todo-list li:hover .change {
+	display: block;
+	margin-right: 30px;
+}
+
 .todo-list li .edit {
 	display: none;
+}
+
+.edit{
+	max-width: fit-content;
 }
 
 .todo-list li.editing:last-child {
@@ -244,29 +281,6 @@ label[for='toggle-all'] {
 	left: 0;
 	height: 50px;
 	overflow: hidden;
-}
-
-.todo-count {
-	float: left;
-	text-align: left;
-}
-
-.todo-count strong {
-	font-weight: 300;
-}
-
-.clear-completed,
-html .clear-completed:active {
-	float: right;
-	position: relative;
-	line-height: 20px;
-	text-decoration: none;
-	cursor: pointer;
-	position: relative;
-}
-
-.clear-completed:hover {
-	text-decoration: underline;
 }
 
 .info {

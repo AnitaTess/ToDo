@@ -23,7 +23,7 @@
       <div id="root" class="root">
   <form ng-submit="addToDo()">
     <input type="text" placeholder="New Task" ng-model="newToDo.task">
-    <button type="submit">Add</button>
+    <button class="add" type="submit">+</button>
   </form>
   <!-- tasks list -->
   <h2>Your To Do List:</h2>
@@ -33,11 +33,13 @@
       <span ng-class="{'done': item.done}" ng-if="item !== editedToDo">{{item.task}}</span>
       <form ng-if="item === editedToDo" ng-submit="saveEdit()">
         <input type="text" ng-model="editedToDo.task">
-        <button type="submit">Save</button>
+        <button class="add" type="submit">Save</button>
     </form>
     <!-- edit and delete buttons -->
-      <button ng-click="editToDo(item)">Edit</button>
-      <button ng-click="removeToDo(item)">Remove</button>
+    <div class="right">
+      <button class="buttons" ng-click="editToDo(item)">✎</button>
+      <button class="buttons" ng-click="removeToDo(item)">✖</button>
+    </div>
     </li>
   </ul>
 </div>

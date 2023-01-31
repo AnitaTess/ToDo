@@ -16,10 +16,13 @@
 					<img src="assets/Vue.png" alt="Vue LOGO" height="100">
 					</div>
 					<!-- New Task -->
+					<div class="add">
 				<input class="new-todo"
 				  v-model="newTodo"
 					v-on:keyup.enter="addTodo"
 				placeholder="Add New Task" autofocus>
+				<button class="adding" @click="addTodo">+</button>
+			</div>
 			</header>
 			<section class="main">
 				<!-- Tasks List -->
@@ -30,6 +33,7 @@
 						<div class="view">
 								<input class="toggle" type="checkbox" v-model="todo.completed" @click="doneTodo(todo)" />
 								<label @dblclick="editTodo(todo)">{{ todo.title }}</label>
+								<button class="change" @click="editTodo(todo)"></button>
 								<button class="destroy" @click="removeTodo(todo)"></button>
 						</div>
 						<input class="edit" type="text"

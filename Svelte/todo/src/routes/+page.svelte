@@ -135,6 +135,7 @@ li{
 .list{
   text-align: left;
   margin-left: 80px;
+  margin-right: 80px;
 }
 
 .info {
@@ -156,6 +157,11 @@ li{
 
 .info a:hover {
 	text-decoration: underline;
+}
+
+.right{
+  float:right;
+	display: inline;
 }
 
   </style>
@@ -184,10 +190,7 @@ li{
           <input type="checkbox" class="done" bind:checked={todo.completed} on:change={() => toggleTodo(index)} />
           <input type="text" bind:value={currentTodoText} on:input={() => updateTodo(index, currentTodoText)}/>
           <button type="button" class="buttonn" on:click={() => (todo.editing = false) || saveTodos()} >
-            Update
-          </button>
-          <button type="button" class="buttonn" on:click={() => removeTodo(index)}>
-            Remove
+            ✔
           </button>
         </li>
       {:else}
@@ -195,9 +198,14 @@ li{
         <li on:dblclick={() => (todo.editing = true)} class:completed={todo.completed}>
           <input type="checkbox" bind:checked={todo.completed} on:change={() => toggleTodo(index)} />
           {todo.text}
-          <button type="button" class="buttonn" on:click={() => removeTodo(index)}>
-            Remove
+          <div class="right">
+          <button type="button" class="buttonn" on:click={() => (todo.editing = true)} class:completed={todo.completed}>
+            ✎
           </button>
+          <button type="button" class="buttonn" on:click={() => removeTodo(index)}>
+            ✖
+          </button>
+        </div>
         </li>
         {/if}
       {/if}

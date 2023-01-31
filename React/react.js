@@ -68,8 +68,9 @@ const ToDo = () => {
             React.createElement('li', { style: { textDecoration: task.completed ? 'line-through' : 'none' } },
               React.createElement('input', { type: 'checkbox', checked: task.completed, onChange: () => handleComplete(index) }),
               task.text,
-              React.createElement('button', { className: 'buttons', onClick: () => handleEdit(index) }, 'Edit'),
-              React.createElement('button', { className: 'buttonss', onClick: () => handleDelete(index) }, 'X')
+              React.createElement('div', {className: 'contain'},
+              React.createElement('button', { className: 'buttons', onClick: () => handleEdit(index) }, '✎'),
+              React.createElement('button', { className: 'buttonss', onClick: () => handleDelete(index) }, '✖')),
             )
         ))
       );

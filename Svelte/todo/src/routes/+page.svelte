@@ -130,6 +130,8 @@ input[type="checkbox"]{
 li{
   font-size: 20px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .list{
@@ -157,11 +159,6 @@ li{
 
 .info a:hover {
 	text-decoration: underline;
-}
-
-.right{
-  float:right;
-	display: inline;
 }
 
   </style>
@@ -196,8 +193,10 @@ li{
       {:else}
       {#if !todo.editing}
         <li on:dblclick={() => (todo.editing = true)} class:completed={todo.completed}>
+	<div class="left">
           <input type="checkbox" bind:checked={todo.completed} on:change={() => toggleTodo(index)} />
           {todo.text}
+		</div>
           <div class="right">
           <button type="button" class="buttonn" on:click={() => (todo.editing = true)} class:completed={todo.completed}>
             ✎
